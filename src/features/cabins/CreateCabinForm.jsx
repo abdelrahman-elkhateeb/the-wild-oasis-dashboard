@@ -1,14 +1,13 @@
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import PropTypes from "prop-types";
 import { useForm } from "react-hook-form";
-import toast from "react-hot-toast";
-import { createEditCabin } from "../../services/apiCabins";
 import Button from "../../ui/Button";
 import FileInput from "../../ui/FileInput";
 import Form from "../../ui/Form";
 import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
 import { Textarea } from "../../ui/Textarea";
-import PropTypes from "prop-types";
+import { useCreateCabin } from "./useCreateCabin";
+import { useEditCabin } from "./useEditCabin";
 
 CreateCabinForm.propTypes = {
   cabinToEdit: PropTypes.shape({
@@ -23,44 +22,27 @@ CreateCabinForm.propTypes = {
 
 function CreateCabinForm({ cabinToEdit = {} }) {
   const { id: editId, ...editValues } = cabinToEdit;
+  //create cabin
+  const { isCreating, createCabin } = useCreateCabin();
+  //edit cabin
+  const { isEditing, editCabin } = useEditCabin();
+
   const isEditSession = Boolean(editId);
 
-  const { register, handleSubmit, reset, getValues, formState } = useForm(
+  const { register, handleSubmit, getValues, formState, reset } = useForm(
     {
       defaultValues: isEditSession ? editValues : {}
     }
   );
+
   const { errors } = formState;
-  const queryClient = useQueryClient();
-
-  //create cabin
-  const { isLoading: isCreating, mutate: createCabin } = useMutation({
-    mutationFn: createEditCabin,
-    onSuccess: () => {
-      toast.success("new cabin successfully created");
-      queryClient.invalidateQueries({ queryKey: ["cabins"] }),
-        reset()
-    },
-    onError: (error) => toast.error(error.message),
-  })
-
-  //edit cabin
-  const { isLoading: isEditing, mutate: editCabin } = useMutation({
-    mutationFn: ({ newCabinData, id }) => createEditCabin(newCabinData, id),
-    onSuccess: () => {
-      toast.success("cabin successfully edited");
-      queryClient.invalidateQueries({ queryKey: ["cabins"] }),
-        reset()
-    },
-    onError: (error) => toast.error(error.message),
-  })
 
   const isWorking = isCreating || isEditing;
 
   function onSubmit(data) {
     const image = typeof data.image === "string" ? data.image : data.image[0];
-    if (isEditSession) editCabin({ newCabinData: { ...data, image }, id: editId });
-    else createCabin({ ...data, image: image });
+    if (isEditSession) editCabin({ newCabinData: { ...data, image }, id: editId }, { onSuccess: () => reset() });
+    else createCabin({ ...data, image: image }, { onSuccess: () => reset() });
   }
 
   function onError(errors) {
