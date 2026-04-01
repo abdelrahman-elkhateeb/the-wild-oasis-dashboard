@@ -29,13 +29,10 @@ const TableHeader = styled.header`
 `;
 
 function CabinTable() {
-  const { isLoading, data: cabins, error } = useQuery({
+  const { isLoading, data: cabins } = useQuery({
     queryKey: ["cabins"],
     queryFn: getCabins
   })
-
-  console.log(cabins, error);
-
 
   if (isLoading) return <Spinner />
 
