@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import styled, { css } from "styled-components";
 
 const StyledFormRow = styled.div`
@@ -45,6 +46,13 @@ const Error = styled.span`
   font-size: 1.4rem;
   color: var(--color-red-700);
 `;
+
+FormRow.propTypes = {
+  label: PropTypes.string,
+  error: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  orientation: PropTypes.oneOf(["vertical", "horizontal"]),
+};
 
 function FormRow({ label, error, children, orientation }) {
   return (
