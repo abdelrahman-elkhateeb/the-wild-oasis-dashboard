@@ -7,7 +7,7 @@ import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
 import { Textarea } from "../../ui/Textarea";
 import { useCreateCabin } from "./useCreateCabin";
-import { useEditCabin } from "./useEditCabin";
+import { useUpdateCabin } from "./useUpdateCabin";
 
 CreateCabinForm.propTypes = {
   cabinToEdit: PropTypes.shape({
@@ -25,7 +25,7 @@ function CreateCabinForm({ cabinToEdit = {} }) {
   //create cabin
   const { isCreating, createCabin } = useCreateCabin();
   //edit cabin
-  const { isEditing, editCabin } = useEditCabin();
+  const { isEditing, editCabin } = useUpdateCabin();
 
   const isEditSession = Boolean(editId);
 
