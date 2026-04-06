@@ -17,7 +17,7 @@ CreateCabinForm.propTypes = {
     regularPrice: PropTypes.number,
     discount: PropTypes.number,
     image: PropTypes.string,
-  }).isRequired,
+  }),
   onCloseModal: PropTypes.func
 };
 
