@@ -1,12 +1,14 @@
-import BookingRow from "./BookingRow";
-import Table from "../../ui/Table";
-import Menus from "../../ui/Menus";
-import { getBookings } from "../../services/apiBookings";
 import Empty from "../../ui/Empty";
+import Menus from "../../ui/Menus";
+import Spinner from "../../ui/Spinner";
+import Table from "../../ui/Table";
+import BookingRow from "./BookingRow";
+import { useBookings } from "./useBookings";
 
 function BookingTable() {
-  const bookings = getBookings();
-
+  const { bookings, isPending } = useBookings();
+  
+  if (isPending) return <Spinner />
   if (!bookings) return <Empty resourceName="bookings" />
 
   return (

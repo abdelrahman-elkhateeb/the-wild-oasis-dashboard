@@ -37,22 +37,22 @@ const Amount = styled.div`
 
 BookingRow.propTypes = {
   booking: PropTypes.shape({
-    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     created_at: PropTypes.string,
-    startDate: PropTypes.string.isRequired,
-    endDate: PropTypes.string.isRequired,
-    numNights: PropTypes.number.isRequired,
+    startDate: PropTypes.string,
+    endDate: PropTypes.string,
+    numNights: PropTypes.number,
     numGuests: PropTypes.number,
-    totalPrice: PropTypes.number.isRequired,
-    status: PropTypes.oneOf(["unconfirmed", "checked-in", "checked-out"]).isRequired,
+    totalPrice: PropTypes.number,
+    status: PropTypes.oneOf(["unconfirmed", "checked-in", "checked-out"]),
     guests: PropTypes.shape({
-      fullName: PropTypes.string.isRequired,
-      email: PropTypes.string.isRequired,
-    }).isRequired,
+      fullName: PropTypes.string,
+      email: PropTypes.string,
+    }),
     cabins: PropTypes.shape({
-      name: PropTypes.string.isRequired,
-    }).isRequired,
-  }).isRequired,
+      name: PropTypes.string,
+    }),
+  }),
 }
 
 function BookingRow({

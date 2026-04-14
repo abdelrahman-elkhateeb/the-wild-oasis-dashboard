@@ -4,6 +4,7 @@ import Spinner from "../../ui/Spinner";
 import Table from "../../ui/Table";
 import CabinRow from "./CabinRow";
 import { useCabins } from "./useCabins";
+import Empty from "../../ui/Empty";
 
 function CabinTable() {
   const { cabins, isPending } = useCabins();
@@ -24,6 +25,7 @@ function CabinTable() {
 
 
   if (isPending) return <Spinner />
+  if (!cabins) return <Empty resourceName="bookings" />
 
   return (
     <Menus>
