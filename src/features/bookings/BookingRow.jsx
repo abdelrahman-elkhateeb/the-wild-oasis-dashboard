@@ -6,6 +6,7 @@ import Table from "../../ui/Table";
 
 import { formatCurrency } from "../../utils/helpers";
 import { formatDistanceFromNow } from "../../utils/helpers";
+import PropTypes from "prop-types";
 
 const Cabin = styled.div`
   font-size: 1.6rem;
@@ -34,14 +35,34 @@ const Amount = styled.div`
   font-weight: 500;
 `;
 
+BookingRow.propTypes = {
+  booking: PropTypes.shape({
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    created_at: PropTypes.string,
+    startDate: PropTypes.string.isRequired,
+    endDate: PropTypes.string.isRequired,
+    numNights: PropTypes.number.isRequired,
+    numGuests: PropTypes.number,
+    totalPrice: PropTypes.number.isRequired,
+    status: PropTypes.oneOf(["unconfirmed", "checked-in", "checked-out"]).isRequired,
+    guests: PropTypes.shape({
+      fullName: PropTypes.string.isRequired,
+      email: PropTypes.string.isRequired,
+    }).isRequired,
+    cabins: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+}
+
 function BookingRow({
   booking: {
-    id: bookingId,
-    created_at,
+    // id: bookingId,
+    // created_at,
     startDate,
     endDate,
     numNights,
-    numGuests,
+    // numGuests,
     totalPrice,
     status,
     guests: { fullName: guestName, email },

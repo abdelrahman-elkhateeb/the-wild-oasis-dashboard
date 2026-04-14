@@ -1,9 +1,13 @@
 import BookingRow from "./BookingRow";
 import Table from "../../ui/Table";
 import Menus from "../../ui/Menus";
+import { getBookings } from "../../services/apiBookings";
+import Empty from "../../ui/Empty";
 
 function BookingTable() {
-  const bookings = [];
+  const bookings = getBookings();
+
+  if (!bookings) return <Empty resourceName="bookings" />
 
   return (
     <Menus>
