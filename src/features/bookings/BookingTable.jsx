@@ -7,7 +7,7 @@ import { useBookings } from "./useBookings";
 
 function BookingTable() {
   const { bookings, isPending } = useBookings();
-  
+
   if (isPending) return <Spinner />
   if (!bookings) return <Empty resourceName="bookings" />
 
