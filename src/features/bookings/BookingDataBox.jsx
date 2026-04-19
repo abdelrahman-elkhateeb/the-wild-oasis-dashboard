@@ -11,6 +11,7 @@ import DataItem from "../../ui/DataItem";
 import { Flag } from "../../ui/Flag";
 
 import { formatDistanceFromNow, formatCurrency } from "../../utils/helpers";
+import PropTypes from "prop-types";
 
 const StyledBookingDataBox = styled.section`
   /* Box */
@@ -100,6 +101,32 @@ const Footer = styled.footer`
   color: var(--color-grey-500);
   text-align: right;
 `;
+
+BookingDataBox.propTypes = {
+  booking: PropTypes.shape({
+    created_at: PropTypes.string,
+    startDate: PropTypes.string,
+    endDate: PropTypes.string,
+    numNights: PropTypes.number,
+    numGuests: PropTypes.number,
+    cabinPrice: PropTypes.number,
+    extrasPrice: PropTypes.number,
+    totalPrice: PropTypes.number,
+    hasBreakfast: PropTypes.bool,
+    observations: PropTypes.string,
+    isPaid: PropTypes.bool,
+    guests: PropTypes.shape({
+      fullName: PropTypes.string,
+      email: PropTypes.string,
+      country: PropTypes.string,
+      countryFlag: PropTypes.string,
+      nationalID: PropTypes.string,
+    }),
+    cabins: PropTypes.shape({
+      name: PropTypes.string,
+    }),
+  }),
+};
 
 // A purely presentational component
 function BookingDataBox({ booking }) {
