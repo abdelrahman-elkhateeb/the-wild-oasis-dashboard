@@ -16,10 +16,20 @@ export function useBookings() {
     direction: sortByValue.split("-")[1]
   };
 
-  const { isPending, data: bookings = [], error } = useQuery({
-    queryKey: ["bookings", filter, sortBy],
-    queryFn: () => getBookings({ filter, sortBy }),
+  // pagination
+  const page = !searchParams.get("page") ? 1 : Number(searchParams.get("page"));
+
+  const {
+    isPending,
+    data: {
+      data: bookings = [],
+      count
+    } = {},
+    error
+  } = useQuery({
+    queryKey: ["bookings", filter, sortBy, page],
+    queryFn: () => getBookings({ filter, sortBy, page }),
 
   })
-  return { isPending, error, bookings }
+  return { isPending, error, bookings, count }
 }
