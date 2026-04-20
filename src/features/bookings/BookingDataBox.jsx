@@ -130,6 +130,7 @@ BookingDataBox.propTypes = {
 
 // A purely presentational component
 function BookingDataBox({ booking }) {
+
   const {
     created_at,
     startDate,
