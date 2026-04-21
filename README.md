@@ -1,11 +1,19 @@
+أبشر، هعملك ملف **README.md** احترافي يليق بمشروع ضخم زي **The Wild Oasis**. الملف ده مصمم عشان يوضح لأي "Recruiter" أو "Senior Developer" إنك مش بس ناقل كود، لكنك فاهم بنية التطبيقات المعقدة.
+
+انسخ الكود اللي بالأسفل وحطه في ملف `README.md` عندك:
+
+---
+
+```markdown
 # 🌲 The Wild Oasis - Internal Management System
 
 A professional, feature-rich internal management application for a boutique hotel. This project was built to master high-level React patterns and professional application development workflows.
 
----
-you can check the project yourself from this link :https://the-wild-oasis-dashboard-peach.vercel.app/
+🏠 **Live Demo:** [The Wild Oasis]([https://the-wild-oasis.vercel.app/dashboar](https://the-wild-oasis-dashboard-peach.vercel.app/login)d)
 
-## Key Features
+---
+
+## 🚀 Key Features
 
 * **Full Dashboard:** Visualize hotel statistics (bookings, sales, check-ins) through interactive charts (Recharts).
 * **Booking Management:** Complete CRUD operations for hotel bookings with filtering, sorting, and pagination.
@@ -17,7 +25,7 @@ you can check the project yourself from this link :https://the-wild-oasis-dashbo
 
 ---
 
-## Tech Stack & Advanced Concepts
+## 🛠️ Tech Stack & Advanced Concepts
 
 ### Core Technologies
 * **React:** Functional components with Hooks.
@@ -45,3 +53,33 @@ src/
  ├── services/       # API interaction layer
  ├── ui/             # Reusable UI components (Design System)
  └── utils/          # Helper functions & constants
+```
+
+---
+
+## 🔧 Installation & Setup
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/abdelrahman-elkhateeb/the-wild-oasis-dashboard.git
+   ```
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+3. **Environment Setup:**
+   Create a `.env` file and add your Supabase credentials:
+   ```env
+   VITE_SUPABASE_URL=your_supabase_url
+   VITE_SUPABASE_KEY=your_supabase_anon_key
+   ```
+4. **Run the app:**
+   ```bash
+   npm run dev
+   ```
+---
+⭐ *This project was built as part of the "Ultimate React Course" by Jonas Schmedtmann.*
+```
+
+
+إيه رأيك؟ لو حابب أضيف أي تفاصيل تانية أنا معاك.
