@@ -3,9 +3,9 @@ import ButtonIcon from "../../ui/ButtonIcon";
 import { useLogout } from "./useLogout";
 
 function Logout() {
-  const { logout } = useLogout();
+  const { logout, isLoading } = useLogout();
   return (
-    <ButtonIcon onClick={logout}>
+    <ButtonIcon onClick={logout} disabled={isLoading}>
       <HiArrowRightOnRectangle />
     </ButtonIcon>
   )
