@@ -3,6 +3,7 @@
 A professional, feature-rich internal management application for a boutique hotel. This project was built to master high-level React patterns and professional application development workflows.
 
 ---
+you can check the project yourself from this link :https://the-wild-oasis-dashboard-peach.vercel.app/
 
 ## Key Features
 
