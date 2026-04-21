@@ -2,8 +2,6 @@
 
 A professional, feature-rich internal management application for a boutique hotel. This project was built to master high-level React patterns and professional application development workflows.
 
- **Live Demo:** [The Wild Oasis]([https://the-wild-oasis.vercel.app/dashboard])
-
 ---
 
 ## Key Features
