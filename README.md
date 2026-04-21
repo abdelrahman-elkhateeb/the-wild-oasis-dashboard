@@ -1,8 +1,48 @@
-# React + Vite
+# 🌲 The Wild Oasis - Internal Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A professional, feature-rich internal management application for a boutique hotel. This project was built to master high-level React patterns and professional application development workflows.
 
-Currently, two official plugins are available:
+ **Live Demo:** [The Wild Oasis]([https://the-wild-oasis.vercel.app/dashboard])
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
+
+## Key Features
+
+* **Full Dashboard:** Visualize hotel statistics (bookings, sales, check-ins) through interactive charts (Recharts).
+* **Booking Management:** Complete CRUD operations for hotel bookings with filtering, sorting, and pagination.
+* **Cabin Management:** Manage cabin details, prices, discounts, and images.
+* **Guest Authentication:** Secure login and user profile updates (avatar, password) via Supabase.
+* **Dark Mode:** A seamless dark/light mode toggle with state persistence.
+* **Dynamic Settings:** Global hotel settings (breakfast price, min/max stay) managed through the UI.
+* **Check-in/Check-out:** Streamlined workflow for guest arrivals, including optional breakfast add-ons.
+
+---
+
+## Tech Stack & Advanced Concepts
+
+### Core Technologies
+* **React:** Functional components with Hooks.
+* **React Query (TanStack Query):** For powerful remote state management, caching, and data fetching.
+* **Supabase:** Backend-as-a-Service (BaaS) providing PostgreSQL database and Authentication.
+* **Styled Components:** For component-level CSS and advanced theme management.
+* **React Hook Form:** Efficient form handling and validation.
+
+### Advanced Architectural Patterns
+* **Compound Component Pattern:** Used for building flexible and reusable UI components (e.g., Tables, Menus, Modals).
+* **Custom Hooks:** Encapsulating logic for authentication, data fetching, and UI interactions.
+* **HOCs & Render Props:** Implementing advanced React patterns for code reusability.
+* **Professional Planning:** Application developed following a strict architecture (Services, Features, UI, Hooks).
+
+---
+
+## 📂 Project Structure
+
+```text
+src/
+ ├── data/           # Remote data logic (Supabase)
+ ├── features/       # Feature-based folders (Bookings, Cabins, Auth, etc.)
+ ├── hooks/          # Reusable custom hooks
+ ├── pages/          # Main route components
+ ├── services/       # API interaction layer
+ ├── ui/             # Reusable UI components (Design System)
+ └── utils/          # Helper functions & constants
