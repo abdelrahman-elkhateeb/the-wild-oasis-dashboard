@@ -1,19 +1,12 @@
-أبشر، هعملك ملف **README.md** احترافي يليق بمشروع ضخم زي **The Wild Oasis**. الملف ده مصمم عشان يوضح لأي "Recruiter" أو "Senior Developer" إنك مش بس ناقل كود، لكنك فاهم بنية التطبيقات المعقدة.
-
-انسخ الكود اللي بالأسفل وحطه في ملف `README.md` عندك:
-
----
-
-```markdown
 # 🌲 The Wild Oasis - Internal Management System
 
 A professional, feature-rich internal management application for a boutique hotel. This project was built to master high-level React patterns and professional application development workflows.
 
-🏠 **Live Demo:** [The Wild Oasis]([https://the-wild-oasis.vercel.app/dashboar](https://the-wild-oasis-dashboard-peach.vercel.app/login)d)
+ **Live Demo:** https://the-wild-oasis-dashboard-peach.vercel.app
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
 * **Full Dashboard:** Visualize hotel statistics (bookings, sales, check-ins) through interactive charts (Recharts).
 * **Booking Management:** Complete CRUD operations for hotel bookings with filtering, sorting, and pagination.
@@ -25,7 +18,7 @@ A professional, feature-rich internal management application for a boutique hote
 
 ---
 
-## 🛠️ Tech Stack & Advanced Concepts
+## Tech Stack & Advanced Concepts
 
 ### Core Technologies
 * **React:** Functional components with Hooks.
@@ -79,7 +72,4 @@ src/
    ```
 ---
 ⭐ *This project was built as part of the "Ultimate React Course" by Jonas Schmedtmann.*
-```
 
-
-إيه رأيك؟ لو حابب أضيف أي تفاصيل تانية أنا معاك.
