@@ -12,6 +12,12 @@ export async function login({ email, password }) {
   return data;
 }
 
+export async function logout() {
+  let { error } = await supabase.auth.signOut();
+
+  if (error) throw new Error(error.message);
+}
+
 export async function getCurrentUser() {
   const { data: session } = await supabase.auth.getSession();
 
@@ -20,6 +26,6 @@ export async function getCurrentUser() {
   const { data, error } = await supabase.auth.getUser();
 
   if (error) throw new Error(error.message);
-  
+
   return data?.user;
 }
