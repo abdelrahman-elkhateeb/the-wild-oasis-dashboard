@@ -14,6 +14,9 @@ import { useMoveBack } from "../../hooks/useMoveBack";
 import Spinner from "../../ui/Spinner";
 import { useCheckout } from "../check-in-out/useCheckout";
 import { useBooking } from "./useBooking";
+import Modal from "../../ui/Modal";
+import ConfirmDelete from "../../ui/ConfirmDelete";
+import { useDeleteBooking } from "./useDeleteBooking";
 
 const HeadingGroup = styled.div`
   display: flex;
@@ -24,6 +27,7 @@ const HeadingGroup = styled.div`
 function BookingDetail() {
   const { booking = {}, isLoading, error } = useBooking();
   const { checkout, isCheckingOut } = useCheckout();
+  const { deleteBooking, isDeletingBooking } = useDeleteBooking();
 
   const moveBack = useMoveBack();
   const navigate = useNavigate();
@@ -55,9 +59,16 @@ function BookingDetail() {
       <BookingDataBox booking={booking} />
 
       <ButtonGroup>
-        <Button variation="secondary" onClick={moveBack}>
-          Back
-        </Button>
+        <Modal>
+          <Modal.Open opens="delete">
+            <Button variation="danger">Delete Booking</Button>
+          </Modal.Open>
+
+          <Modal.Window name={"delete"}>
+            <ConfirmDelete resource="booking" onConfirm={() => deleteBooking(bookingId, { onSettled: () => navigate(-1) })} disabled={isDeletingBooking} />
+          </Modal.Window>
+        </Modal>
+
         {status === "unconfirmed" && <Button onClick={() => { navigate(`/checkin/${bookingId}`); }
         }>Check In</Button>}
         {status === "checked-in" && <Button icon={<HiArrowUpOnSquare />} disabled={isCheckingOut} onClick={() => checkout(bookingId)}>Check Out</Button>}
