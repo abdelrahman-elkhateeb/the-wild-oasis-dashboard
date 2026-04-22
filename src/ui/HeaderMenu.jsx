@@ -7,6 +7,7 @@ import Logout from "../features/authentication/Logout";
 const StyledHeaderMenu = styled.div`
 display: flex;
 gap:0.4rem;
+list-style-type: none;
 `;
 
 function HeaderMenu() {
@@ -14,7 +15,7 @@ function HeaderMenu() {
   return (
     <StyledHeaderMenu>
       <li>
-        <ButtonIcon onClick={()=>navigate("/account")}>
+        <ButtonIcon onClick={() => navigate("/account")}>
           <HiOutlineUser />
         </ButtonIcon>
       </li>

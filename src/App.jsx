@@ -14,6 +14,7 @@ import Users from "./pages/Users";
 import GlobalStyles from "./styles/GlobalStyles";
 import AppLayout from "./ui/AppLayout";
 import ProtectedRoute from "./ui/ProtectedRoute";
+import Account from "./pages/Account";
 
 
 const queryClient = new QueryClient({
